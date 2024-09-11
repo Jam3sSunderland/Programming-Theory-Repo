@@ -940,6 +940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2634131162657266763, guid: 6e9816b3a560f9149aa874f9e2ad2ae2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1825053048}
     - target: {fileID: 9008120161113755084, guid: 6e9816b3a560f9149aa874f9e2ad2ae2, type: 3}
       propertyPath: m_Name
       value: Enemy1
@@ -1125,7 +1129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2435372021847380493, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
       propertyPath: m_Name
-      value: 'Player '
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 4907899446575141160, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
       propertyPath: m_RootOrder
@@ -1170,18 +1174,6 @@ PrefabInstance:
     - target: {fileID: 4907899446575141160, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7982419557462204470, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
-      propertyPath: horsePower
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146513548205302185, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146513548205302185, guid: 432d736e0f2d08245a9fbea35210bf27, type: 3}
-      propertyPath: m_Constraints
-      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
