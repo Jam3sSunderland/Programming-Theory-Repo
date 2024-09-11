@@ -9,16 +9,12 @@ public class Camerafollow : MonoBehaviour
     public float rLerp = 0.1f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-       
-
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
-        transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
+        transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp );
+        transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp );
     }
 }

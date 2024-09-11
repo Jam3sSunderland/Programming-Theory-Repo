@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float horsePower = 0;
-    private float turnSpeed = 45.0f;
+    public float turnSpeed = 45.0f;
     public float forWardInput;
     public float horizontalInput;
     public float speed;
@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
         //  transform.Translate(Vector3.forward *Time.deltaTime*speed * forWardInput);
         playerRB.AddRelativeForce(Vector3.forward * horsePower * forWardInput);
         // rotate car 
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput );
 
         speed = Mathf.RoundToInt(playerRB.velocity.magnitude * 2.237f);
     }
