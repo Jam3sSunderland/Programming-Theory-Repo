@@ -1288,10 +1288,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1825053048}
-    - target: {fileID: 1416775743537817771, guid: c23425628d5657f4ca577141c0c4642a, type: 3}
-      propertyPath: jumpForce
-      value: 3.23
-      objectReference: {fileID: 0}
     - target: {fileID: 5899311890563378784, guid: c23425628d5657f4ca577141c0c4642a, type: 3}
       propertyPath: m_RootOrder
       value: 4

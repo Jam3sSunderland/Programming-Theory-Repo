@@ -121,12 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c976915824d34d4f9d591a1332eb338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.86
+  speed: 1050
   player: {fileID: 0}
   deSpawn: -0.4
-  jumpForce: 3.23
+  jumpForce: 18
   jumpTimer: 0
-  jumpRate: 2
+  jumpRate: 2.5
 --- !u!54 &903994852337989891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7729319872191383112}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

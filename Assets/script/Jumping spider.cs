@@ -7,6 +7,12 @@ public class Jumpingspider : Enemy
     public float jumpForce;
     public float jumpTimer;
     public float jumpRate = 2f;
+
+
+    private void Update()
+    {
+        jumpTime();
+    }
     private void jumpTime()
     {
         jumpTimer += Time.deltaTime;
@@ -25,8 +31,5 @@ public class Jumpingspider : Enemy
         enemyRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    private void Update()
-    {
-        jumpTime();
-    }
+   
 }
