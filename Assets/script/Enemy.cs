@@ -5,9 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 2;
-    private Rigidbody enemyRb;
+    protected private Rigidbody enemyRb;
     public GameObject player;
-
+    public float deSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +18,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FollowThePlayer();
+        DespawnEnemy();
+       
+    }
+    public void FollowThePlayer()
+    {
         Vector3 looky = (player.transform.position - transform.position).normalized;
 
         enemyRb.AddForce(looky * speed);
-
-        if(enemyRb.transform.position.y<-10)
+    }
+    public void DespawnEnemy()
+    {
+        if (enemyRb.transform.position.y < deSpawn)
         {
             Destroy(gameObject);
         }
