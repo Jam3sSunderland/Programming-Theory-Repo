@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         DespawnEnemy();
        
     }
-    public void FollowThePlayer()
+     protected virtual void FollowThePlayer()
     {
         Vector3 looky = (player.transform.position - transform.position).normalized;
 
