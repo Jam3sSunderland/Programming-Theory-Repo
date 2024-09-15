@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e418f4e44df269419a03953e6e41617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: golen
   speed: 1.5
+  maxHealthPoint: 100
   player: {fileID: 0}
   deSpawn: -0.4
 --- !u!54 &4687979615424070792

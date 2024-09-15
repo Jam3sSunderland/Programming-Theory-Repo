@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c976915824d34d4f9d591a1332eb338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: 
   speed: 1050
+  maxHealthPoint: 100
   player: {fileID: 0}
   deSpawn: -0.4
   jumpForce: 18
