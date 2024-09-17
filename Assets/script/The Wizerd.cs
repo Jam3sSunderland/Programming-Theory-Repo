@@ -8,7 +8,7 @@ public class TheWizerd : Enemy
 {
     private float moveRate = 2;
     private float moverTimer;
-    public float shotRate = .001f;
+    public float shotRate = 2.1f;
     public float shotTimer;
     public GameObject projectile;
 
@@ -28,7 +28,7 @@ public class TheWizerd : Enemy
 
         if (moverTimer > moveRate)
         {
-            Attack();
+           // Attack();
             transform.position = new Vector3(Random.Range(minX, maxX), 1.11f, Random.Range(minZ, maxZ));
             
             moverTimer = 0;
@@ -36,8 +36,9 @@ public class TheWizerd : Enemy
 
         }
     }
-    private void Attack()
+    protected override void Attack()
     {
+        base.Attack();
         shotTimer += Time.deltaTime;
         if (shotTimer > shotRate)
         {

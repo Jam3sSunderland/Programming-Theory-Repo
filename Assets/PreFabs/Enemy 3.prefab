@@ -146,12 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0d54316f8dc30498653eba7c78767d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: wizerd
   speed: 2.74
   maxHealthPoint: 100
   player: {fileID: 0}
   deSpawn: -0.4
-  shotRate: 0.001
+  distance: 3
+  shotRate: 2
   shotTimer: 0
   projectile: {fileID: 2438896365591086360, guid: ef99a615977b5d2478c4607ba257db58, type: 3}
   minX: 22.76

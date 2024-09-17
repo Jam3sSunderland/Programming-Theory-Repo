@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public float deSpawn;
     public float distance;
+
+    public Image hpImage;
+    public Image hpEffectImage;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,17 @@ public class Enemy : MonoBehaviour
     {
         FollowThePlayer();
         DespawnEnemy();
+        if (healthPoint <= 0)
+        {
+            Death();
+        }
+        Attack();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            healthPoint -= 25;
+        }
+        DisplayHpBar();
        
     }
      protected virtual void FollowThePlayer()
@@ -51,6 +66,27 @@ public class Enemy : MonoBehaviour
         if (enemyRb.transform.position.y < deSpawn)
         {
             Destroy(gameObject);
+        }
+    }
+    protected virtual void Attack()
+    {
+        Debug.Log(enemyName + "is Attacking");
+    }
+    protected virtual void Death()
+    {
+        Destroy(gameObject);
+    }
+
+    protected virtual void DisplayHpBar()
+    {
+        hpImage.fillAmount=healthPoint/maxHealthPoint;
+        if (hpEffectImage.fillAmount > hpImage.fillAmount)
+        {
+            hpEffectImage.fillAmount -= 0.005f;
+        }
+        else
+        {
+            hpEffectImage.fillAmount = hpImage.fillAmount;
         }
     }
 }

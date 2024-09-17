@@ -121,11 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c976915824d34d4f9d591a1332eb338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Jumping spider
   speed: 1050
   maxHealthPoint: 100
   player: {fileID: 0}
   deSpawn: -0.4
+  distance: 6.67
+  hpImage: {fileID: 0}
+  hpEffectImage: {fileID: 0}
   jumpForce: 18
   jumpTimer: 0
   jumpRate: 2.5
