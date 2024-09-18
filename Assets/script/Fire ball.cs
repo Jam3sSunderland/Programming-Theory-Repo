@@ -30,4 +30,8 @@ public class Fireball : Enemy
             Destroy(gameObject);
         }
     }
+    protected override void DisplayHpBar()
+    {
+        //base.DisplayHpBar();
+    }
 }
