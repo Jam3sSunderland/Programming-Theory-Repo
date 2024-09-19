@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5235ee823e06d48ac2aa2db915bb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horsePower: 132.2
+  m_HorsePower: 55
   turnSpeed: 90
   forWardInput: 0
   horizontalInput: 0

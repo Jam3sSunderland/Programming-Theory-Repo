@@ -6,7 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float horsePower = 0;
+    public float m_HorsePower = 0.5f;
+    public float HorsePower
+    {
+        get { return m_HorsePower; }
+        set
+        { 
+            if (value < 0.0f)
+            {
+                Debug.LogError("you cant set a negative horsepower");
+            }
+            else
+            {
+                m_HorsePower = value;
+            }
+        }
+
+    }
+
+
     public float turnSpeed = 45.0f;
     public float forWardInput;
     public float horizontalInput;
@@ -28,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         forWardInput = Input.GetAxis("Vertical");
         // move car
         //  transform.Translate(Vector3.forward *Time.deltaTime*speed * forWardInput);
-        playerRB.AddRelativeForce(Vector3.forward * horsePower * forWardInput);
+        playerRB.AddRelativeForce(Vector3.forward * m_HorsePower * forWardInput);
         // rotate car 
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput );
 
