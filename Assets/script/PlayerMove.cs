@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
 {
     public int playerHealthPoint;
     public int maxHealthPoint;
+    
+    public int damageEmemy = 25;
+    public GameObject enemy;
 
     public float m_HorsePower = 0.5f;
     public float HorsePower //ENCAPSULATION
@@ -38,6 +41,7 @@ public class PlayerMove : MonoBehaviour
     public Slider slider;
     public float outOfBounds { get; private set; } = -0.4f;//ENCAPSULATION
     private CountrolGameState gameState;
+    public Enemy ememyScript;
 
    
     // Start is called before the first frame update
@@ -66,17 +70,17 @@ public class PlayerMove : MonoBehaviour
 
         speed = Mathf.RoundToInt(playerRB.velocity.magnitude * 2.237f);
 
-        //hp player
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Player attacking");
 
+           
+        }
 
-
-
-
-
-        //game over from falling 
-        OutOfBoundsPlayer();
+            //game over from falling 
+            OutOfBoundsPlayer();
     }
+ 
     public void TakeDamage(int amount)
     {
         playerHealthPoint -= amount;
@@ -86,12 +90,6 @@ public class PlayerMove : MonoBehaviour
             Death();
         }
     }
-
-
-   
-
- 
-
 
 
     private void OutOfBoundsPlayer()

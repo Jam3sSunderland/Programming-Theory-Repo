@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private string enemyName;
    [SerializeField] protected private float speed = 2;
-    private float healthPoint;
+    public float healthPoint;
     [SerializeField] private float maxHealthPoint;
 
     protected private Rigidbody enemyRb;
@@ -40,17 +40,30 @@ public class Enemy : MonoBehaviour
     {
         FollowThePlayer();
         DespawnEnemy();
-        if (healthPoint <= 0)
-        {
-            Death();
-        }
+      
         Attack();
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            healthPoint -= 25;
+            Debug.Log("Player attacking");
+            if (Vector3.Distance(transform.position, player.transform.position) < distance)
+            {
+                healthPoint -= 25;
+                if (healthPoint <= 0)
+                {
+                    Death();
+                }
+            }
         }
+         
+
+
         DisplayHpBar();
+       
+    }
+    public void TakeDamageFromPlayer(int amount)
+    {
+        healthPoint -= amount;
+        
        
     }
     private void OnCollisionEnter(Collision collision)
@@ -67,7 +80,7 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void FollowThePlayer()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < distance)
+        
         {
             Vector3 looky = (player.transform.position - transform.position).normalized;
 
@@ -75,6 +88,7 @@ public class Enemy : MonoBehaviour
         }
        
     }
+
     public void DespawnEnemy()
     {
         if (enemyRb.transform.position.y < deSpawn)
