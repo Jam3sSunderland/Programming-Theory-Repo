@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PlayerMove : MonoBehaviour
 {
+    public int playerHealthPoint;
+    public int maxHealthPoint;
+
     public float m_HorsePower = 0.5f;
-    public float HorsePower
+    public float HorsePower //ENCAPSULATION
     {
         get { return m_HorsePower; }
         set
@@ -30,18 +34,28 @@ public class PlayerMove : MonoBehaviour
     public float horizontalInput;
     public float speed;
     private Rigidbody playerRB;
-    private float outOfBounds = -0.4f;
+
+    public Slider slider;
+    public float outOfBounds { get; private set; } = -0.4f;//ENCAPSULATION
     private CountrolGameState gameState;
+
+   
     // Start is called before the first frame update
     void Start()
     {
         gameState = GameObject.Find("GameBrain").GetComponent<CountrolGameState>();
         playerRB = GetComponent<Rigidbody>();
+        playerHealthPoint = maxHealthPoint;
+        slider.maxValue = maxHealthPoint;
+        slider.value = playerHealthPoint;
     }
+
+   
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    { 
+
         horizontalInput = Input.GetAxis("Horizontal");
         forWardInput = Input.GetAxis("Vertical");
         // move car
@@ -52,9 +66,34 @@ public class PlayerMove : MonoBehaviour
 
         speed = Mathf.RoundToInt(playerRB.velocity.magnitude * 2.237f);
 
+        //hp player
+        
+
+
+
+
+
+
         //game over from falling 
         OutOfBoundsPlayer();
     }
+    public void TakeDamage(int amount)
+    {
+        playerHealthPoint -= amount;
+        slider.value = playerHealthPoint;
+        if (playerHealthPoint <= 0)
+        {
+            Death();
+        }
+    }
+
+
+   
+
+ 
+
+
+
     private void OutOfBoundsPlayer()
     {
         if (transform.position.y < outOfBounds)
@@ -65,6 +104,10 @@ public class PlayerMove : MonoBehaviour
           
         }
 
+    }
+    private void Death()
+    {
+        gameState.TheGameIsOver();
     }
    
 

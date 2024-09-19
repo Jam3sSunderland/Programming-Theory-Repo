@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jumpingspider : Enemy
+public class Jumpingspider : Enemy//INHERITANCE
 {
     public float jumpForce;
     public float jumpTimer;
@@ -14,7 +14,7 @@ public class Jumpingspider : Enemy
     protected override void FollowThePlayer()
     {
         //base.FollowThePlayer();
-        JumpTime();
+        JumpTime(); //ABSTRACTION AND POLYMORPHISM
     }
     private void JumpTime()
     {
@@ -43,6 +43,7 @@ public class Jumpingspider : Enemy
             enemyRb.AddForce(looky * speed);
         }
     }
+
 
    
 }

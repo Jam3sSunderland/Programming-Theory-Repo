@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     public Image hpImage;
     public Image hpEffectImage;
+    public int damage = 25;
+    private PlayerMove playerHealth;
     
     // Start is called before the first frame update
     void Start()
@@ -51,7 +53,19 @@ public class Enemy : MonoBehaviour
         DisplayHpBar();
        
     }
-     protected virtual void FollowThePlayer()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (playerHealth == null)
+            {
+                playerHealth = collision.gameObject.GetComponent<PlayerMove>();
+            }
+           
+            playerHealth.TakeDamage(damage);
+        }
+    }
+    protected virtual void FollowThePlayer()
     {
         if (Vector3.Distance(transform.position, player.transform.position) < distance)
         {

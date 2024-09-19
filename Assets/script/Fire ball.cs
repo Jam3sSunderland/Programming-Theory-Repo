@@ -6,6 +6,7 @@ public class Fireball : Enemy
 {
     private float moveRate = 2;
     private float moverTimer;
+    private PlayerMove playerMoveScript;
 
     protected override void FollowThePlayer()
     {
@@ -23,15 +24,10 @@ public class Fireball : Enemy
 
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag( "Player"))
-        {
-            Destroy(gameObject);
-        }
-    }
+   
     protected override void DisplayHpBar()
     {
         //base.DisplayHpBar();
     }
+   
 }
