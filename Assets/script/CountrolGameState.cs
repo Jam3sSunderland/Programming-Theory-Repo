@@ -16,22 +16,19 @@ public class CountrolGameState : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Attack();
-    }
+   
 
     public void TheGameIsOver()
     {
         SceneManager.LoadScene(2);
     }
-    private void Attack()
+    public void ReStartGame()
     {
-        shotTimer += Time.deltaTime;
-        if (shotTimer > shotRate)
-        {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            shotTimer = 0;
-        }
+        SceneManager.LoadScene(1);
     }
+    public void BackToMainManu()
+    {
+        SceneManager.LoadScene(0);
+    }
+  
 }
